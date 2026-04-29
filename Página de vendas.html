@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ebook de treinos para 3, 4 e 5 dias na semana. Método usado pelo personal trainer Mateus Melo com seus alunos. R$47 com acesso imediato.">
+<title>Ebook de Treinos — Mateus Melo Treinador</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;900&family=Barlow:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --red:#cc0000;
+    --red-dark:#aa0000;
+    --red-muted:#400000;
+    --bg:#0a0a0a;
+    --bg2:#111111;
+    --bg3:#161616;
+    --border:#1e1e1e;
+    --text:#f0f0f0;
+    --muted:#888;
+    --faint:#444;
+  }
+  html{scroll-behavior:smooth}
+  body{font-family:'Barlow',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+
+  /* HEADER */
+  header{background:#050505;border-bottom:1px solid var(--border);padding:14px 20px;text-align:center}
+  header p{font-size:13px;color:var(--muted);letter-spacing:0.5px}
+  header strong{color:var(--red)}
+
+  /* HERO */
+  .hero{background:var(--bg);padding:80px 20px 64px;text-align:center;border-bottom:3px solid var(--red);position:relative}
+  .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 600px 300px at 50% 0%,rgba(204,0,0,0.07),transparent);pointer-events:none}
+  .badge{display:inline-block;background:var(--red);color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;padding:6px 20px;border-radius:2px;margin-bottom:28px;text-transform:uppercase}
+  .hero h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(32px,7vw,64px);font-weight:900;line-height:1.05;color:#ffffff;margin-bottom:20px;text-transform:uppercase;letter-spacing:-1px}
+  .hero h1 em{color:var(--red);font-style:normal}
+  .hero .sub{font-size:clamp(15px,2.5vw,18px);color:var(--muted);max-width:540px;margin:0 auto 40px;line-height:1.7}
+  .price-block{margin:0 auto 36px}
+  .price-block .de{font-size:14px;color:var(--faint);text-decoration:line-through;margin-bottom:6px}
+  .price-block .por{font-family:'Barlow Condensed',sans-serif;font-size:clamp(48px,10vw,72px);font-weight:900;color:var(--red);line-height:1;letter-spacing:-2px}
+  .price-block .por sup{font-size:28px;vertical-align:super;letter-spacing:0}
+  .cta{display:inline-block;background:var(--red);color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;padding:18px 52px;border-radius:3px;text-decoration:none;letter-spacing:1px;text-transform:uppercase;cursor:pointer;border:none;transition:background .15s,transform .1s}
+  .cta:hover{background:var(--red-dark);transform:scale(1.02)}
+  .cta:active{transform:scale(0.99)}
+  .cta-note{font-size:12px;color:var(--faint);margin-top:12px}
+
+  /* SECTIONS */
+  .section{padding:64px 20px;max-width:720px;margin:0 auto}
+  .section-tag{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;color:var(--red);text-transform:uppercase;margin-bottom:10px}
+  .section-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(24px,5vw,38px);font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:-0.5px;margin-bottom:6px;line-height:1.1}
+  .section-title em{color:var(--red);font-style:normal}
+  .divider{width:40px;height:3px;background:var(--red);margin:16px 0 32px}
+  .sep{width:100%;height:1px;background:var(--border)}
+
+  /* FREQUÊNCIA */
+  .freq-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+  @media(max-width:500px){.freq-grid{grid-template-columns:1fr}}
+  .freq-card{background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:28px 18px;text-align:center;transition:border-color .2s}
+  .freq-card:hover{border-color:var(--red-muted)}
+  .freq-card.star{border-color:var(--red);background:#130000}
+  .freq-pill{display:inline-block;background:var(--red);color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;padding:4px 12px;border-radius:2px;margin-bottom:14px;text-transform:uppercase}
+  .freq-num{font-family:'Barlow Condensed',sans-serif;font-size:52px;font-weight:900;color:var(--red);line-height:1}
+  .freq-unit{font-size:12px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin:4px 0 12px}
+  .freq-desc{font-size:14px;color:#999;line-height:1.6}
+
+  /* LISTA DE BENEFÍCIOS */
+  .ben-list{list-style:none;display:grid;gap:14px}
+  .ben-list li{display:flex;align-items:flex-start;gap:14px;font-size:16px;color:#ccc;line-height:1.5}
+  .ben-list li .ico{flex-shrink:0;width:22px;height:22px;background:var(--red);border-radius:2px;display:flex;align-items:center;justify-content:center;margin-top:1px}
+  .ben-list li .ico svg{width:12px;height:12px;stroke:#fff;stroke-width:2.5;fill:none;stroke-linecap:round;stroke-linejoin:round}
+
+  /* PARA QUEM */
+  .for-section{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+  .for-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+  .for-card{background:var(--bg3);border-radius:6px;padding:20px 18px;border-left:3px solid var(--red)}
+  .for-card strong{display:block;font-size:15px;font-weight:700;color:#fff;margin-bottom:6px}
+  .for-card p{font-size:14px;color:var(--muted);line-height:1.6}
+
+  /* TRAINER */
+  .trainer-wrap{display:flex;gap:20px;align-items:flex-start}
+  @media(max-width:460px){.trainer-wrap{flex-direction:column}}
+  .avatar{width:80px;height:80px;min-width:80px;border-radius:50%;background:var(--red);border:3px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:900;color:#fff;letter-spacing:-1px}
+  .trainer-info h3{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;color:#fff;margin-bottom:6px;letter-spacing:0.5px}
+  .trainer-info p{font-size:14px;color:var(--muted);line-height:1.7}
+  .trainer-info a{color:var(--red);text-decoration:none;font-weight:700}
+  .trainer-info a:hover{text-decoration:underline}
+
+  /* GARANTIA */
+  .guarantee-box{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:32px 28px;display:flex;gap:24px;align-items:flex-start}
+  @media(max-width:460px){.guarantee-box{flex-direction:column}}
+  .shield{width:60px;height:60px;min-width:60px;border-radius:50%;border:2px solid var(--red);display:flex;align-items:center;justify-content:center}
+  .shield svg{width:28px;height:28px;stroke:var(--red);stroke-width:1.8;fill:none}
+  .guarantee-box h3{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;color:#fff;margin-bottom:8px;letter-spacing:0.5px}
+  .guarantee-box p{font-size:14px;color:var(--muted);line-height:1.7}
+
+  /* FAQ */
+  .faq-item{border-bottom:1px solid var(--border);padding:20px 0}
+  .faq-item:last-child{border-bottom:none}
+  .faq-item h4{font-size:16px;font-weight:700;color:#fff;margin-bottom:8px}
+  .faq-item p{font-size:14px;color:var(--muted);line-height:1.7}
+
+  /* CTA FINAL */
+  .cta-final{background:var(--bg);border-top:3px solid var(--red);padding:80px 20px;text-align:center}
+  .cta-final h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(26px,6vw,48px);font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:-0.5px;margin-bottom:12px;line-height:1.1}
+  .cta-final h2 em{color:var(--red);font-style:normal}
+  .cta-final .desc{font-size:16px;color:var(--muted);margin-bottom:32px}
+
+  /* FOOTER */
+  footer{background:#050505;padding:24px 20px;text-align:center;font-size:12px;color:var(--faint);border-top:1px solid var(--border)}
+  footer a{color:var(--muted);text-decoration:none}
+</style>
+</head>
+<body>
+
+<header>
+  <p>Oferta por tempo limitado &nbsp;|&nbsp; <strong>R$ 47,00</strong> com acesso imediato</p>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="badge">Ebook de Treinos — Masculino</div>
+  <h1>Pare de treinar<br>sem <em>resultado</em>.<br>Comece a evoluir.</h1>
+  <p class="sub">O método que uso com meus alunos — agora em um guia completo com treinos para 3, 4 e 5 dias na semana.</p>
+  <div class="price-block">
+    <div class="de">De R$ 97,00</div>
+    <div class="por"><sup>R$</sup>47</div>
+  </div>
+  <a href="SEU_LINK_KIWIFY_AQUI" class="cta">Quero meu ebook agora</a>
+  <div class="cta-note">Acesso imediato &bull; PDF para celular e computador &bull; Pagamento 100% seguro</div>
+</section>
+
+<div class="sep"></div>
+
+<!-- FREQUÊNCIAS -->
+<div class="section">
+  <div class="section-tag">O que está dentro</div>
+  <div class="section-title">Treinos para <em>sua</em> rotina</div>
+  <div class="divider"></div>
+  <div class="freq-grid">
+    <div class="freq-card">
+      <div class="freq-num">3x</div>
+      <div class="freq-unit">por semana</div>
+      <div class="freq-desc">Treino completo para quem tem agenda corrida e quer resultado consistente</div>
+    </div>
+    <div class="freq-card star">
+      <div class="freq-pill">Mais popular</div>
+      <div class="freq-num">4x</div>
+      <div class="freq-unit">por semana</div>
+      <div class="freq-desc">O equilíbrio ideal entre volume de treino e recuperação muscular real</div>
+    </div>
+    <div class="freq-card">
+      <div class="freq-num">5x</div>
+      <div class="freq-unit">por semana</div>
+      <div class="freq-desc">Máxima intensidade para quem quer acelerar o processo ao limite</div>
+    </div>
+  </div>
+</div>
+
+<div class="sep"></div>
+
+<!-- O QUE VOCÊ RECEBE -->
+<div class="section">
+  <div class="section-tag">Conteúdo completo</div>
+  <div class="section-title">Tudo que você <em>precisa</em></div>
+  <div class="divider"></div>
+  <ul class="ben-list">
+    <li>
+      <span class="ico"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>
+      Treinos para 3, 4 e 5 dias — você escolhe o que encaixa na sua semana
+    </li>
+    <li>
+      <span class="ico"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>
+      Divisão de grupos musculares otimizada para hipertrofia máxima
+    </li>
+    <li>
+      <span class="ico"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>
+      Séries, repetições e tempo de descanso especificados em cada exercício
+    </li>
+    <li>
+      <span class="ico"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>
+      Progressão de carga semanal — como evoluir sem entrar em platô
+    </li>
+    <li>
+      <span class="ico"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>
+      PDF otimizado para celular — acesso na academia na hora que precisar
+    </li>
+    <li>
+      <span class="ico"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>
+      O mesmo método aplicado com os alunos de consultoria do @mateusstmelo
+    </li>
+  </ul>
+</div>
+
+<div class="sep"></div>
+
+<!-- PARA QUEM -->
+<div class="for-section">
+  <div class="section">
+    <div class="section-tag">Perfil ideal</div>
+    <div class="section-title">Para <em>quem</em> é esse ebook?</div>
+    <div class="divider"></div>
+    <div class="for-grid">
+      <div class="for-card">
+        <strong>Iniciantes na academia</strong>
+        <p>Que não sabem por onde começar e querem um plano real desde o dia 1</p>
+      </div>
+      <div class="for-card">
+        <strong>Quem treina sem foco</strong>
+        <p>Que faz exercícios aleatórios sem progressão e não vê resultado no espelho</p>
+      </div>
+      <div class="for-card">
+        <strong>Quem quer mais músculo</strong>
+        <p>Que busca hipertrofia de verdade com método baseado em resultados reais</p>
+      </div>
+      <div class="for-card">
+        <strong>Quem não tem tempo</strong>
+        <p>Que precisa de treino eficiente mesmo com poucos dias disponíveis na semana</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sep"></div>
+
+<!-- QUEM É -->
+<div class="section">
+  <div class="section-tag">Sobre o autor</div>
+  <div class="section-title">Quem está <em>por trás</em></div>
+  <div class="divider"></div>
+  <div class="trainer-wrap">
+    <div class="avatar">MS</div>
+    <div class="trainer-info">
+      <h3>Mateus Melo — Treinador Fitness</h3>
+      <p>Personal trainer especializado em hipertrofia masculina. Criador de conteúdo fitness e treinador online com alunos que atingem resultados reais seguindo esses mesmos protocolos. Os treinos deste ebook são os mesmos aplicados nas consultorias individuais — agora acessíveis para todos.<br><br>
+      Acompanhe no Instagram: <a href="https://instagram.com/mateusstmelo" target="_blank">@mateusstmelo</a></p>
+    </div>
+  </div>
+</div>
+
+<div class="sep"></div>
+
+<!-- GARANTIA -->
+<div class="section">
+  <div class="section-tag">Sem risco</div>
+  <div class="section-title">Garantia de <em>7 dias</em></div>
+  <div class="divider"></div>
+  <div class="guarantee-box">
+    <div class="shield">
+      <svg viewBox="0 0 24 24"><path d="M12 2L4 6v6c0 5.5 3.8 10.7 8 12 4.2-1.3 8-6.5 8-12V6l-8-4z"/></svg>
+    </div>
+    <div>
+      <h3>Compra 100% protegida</h3>
+      <p>Se em 7 dias você não gostar do ebook por qualquer motivo — seja qual for — devolvo 100% do seu dinheiro. Sem perguntas, sem burocracia, sem enrolação. Você só tem a ganhar.</p>
+    </div>
+  </div>
+</div>
+
+<div class="sep"></div>
+
+<!-- FAQ -->
+<div class="section">
+  <div class="section-tag">Dúvidas</div>
+  <div class="section-title">Perguntas <em>frequentes</em></div>
+  <div class="divider"></div>
+  <div class="faq-item">
+    <h4>Como recebo o ebook após a compra?</h4>
+    <p>Imediatamente. Assim que o pagamento for confirmado, você recebe o PDF no e-mail cadastrado e pode baixar na hora — sem esperar nada.</p>
+  </div>
+  <div class="faq-item">
+    <h4>Precisa de equipamento específico?</h4>
+    <p>Os treinos são feitos para academia convencional. Nada sofisticado — apenas o que qualquer academia padrão possui.</p>
+  </div>
+  <div class="faq-item">
+    <h4>Serve para iniciantes?</h4>
+    <p>Sim. Os treinos são explicados de forma objetiva. Se você está começando, o plano de 3x por semana é o ponto de entrada ideal.</p>
+  </div>
+  <div class="faq-item">
+    <h4>Tem versão feminina?</h4>
+    <p>A versão masculina está disponível agora. A versão feminina está em produção e será anunciada no @mateusstmelo.</p>
+  </div>
+  <div class="faq-item">
+    <h4>Qual a diferença desse ebook para vídeos gratuitos no YouTube?</h4>
+    <p>Programação estruturada com progressão. No YouTube você encontra exercícios avulsos. Aqui você tem um método completo do dia 1 ao último treino, organizado por frequência e com progressão de carga semana a semana.</p>
+  </div>
+  <div class="faq-item">
+    <h4>Posso combinar com consultoria individual?</h4>
+    <p>Sim. Quem compra o ebook tem preferência para entrar na consultoria online. Entre em contato via Instagram após a compra.</p>
+  </div>
+</div>
+
+<div class="sep"></div>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <h2>Chega de treinar<br>no <em>escuro</em>.</h2>
+  <p class="desc">R$ 47 por um método completo. Menos que uma mensalidade de academia.</p>
+  <div class="price-block" style="margin-bottom:28px">
+    <div class="de" style="color:#333">De R$ 97,00</div>
+    <div class="por"><sup>R$</sup>47</div>
+  </div>
+  <a href="SEU_LINK_KIWIFY_AQUI" class="cta">Garantir meu ebook agora</a>
+  <div class="cta-note">Acesso imediato &bull; Garantia de 7 dias &bull; Pagamento seguro</div>
+</section>
+
+<footer>
+  <p>© 2025 Mateus Melo Treinador &bull; <a href="https://instagram.com/mateusstmelo" target="_blank">@mateusstmelo</a> &bull; Todos os direitos reservados</p>
+</footer>
+
+</body>
+</html>
